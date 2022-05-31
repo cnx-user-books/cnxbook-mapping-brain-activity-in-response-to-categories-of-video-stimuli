@@ -1,0 +1,34 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+
+<title>Background</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m48230</md:content-id>
+  <md:title>Background</md:title>
+  <md:abstract/>
+  <md:uuid>be9f9900-340d-4cfa-b165-05a1b98a5121</md:uuid>
+</metadata>
+
+<content>
+
+  <para id="pchem"> <title> Physical chemistry basis </title>
+Functional magnetic resonance imaging (fMRI) takes advantage of the chemical principle of nuclear magnetic resonance to produce data which map activated brain regions over time. Atoms with an odd number of protons or neutrons have an intrinsic magnetic moment [1]. When exposed to a magnetic field, the atoms will emit electromagnetic radiation with a frequency proportional to the strength of the magnetic field until the magnetic poles align with the field [2]. Varying this magnetic field linearly along one direction will produce linearly varying frequencies. The position of the atom in this dimension is proportional to the frequency of the signal emitted. Radio frequency pulses along slices in one direction provide further spatial detail in the x and y direction [1]. At each pulse the atoms are temporally shifted to align with the altered magnetic field direction. The time it takes for the atom to realign with the stable magnetic field produce signals of varying frequencies [1]. 
+  </para>
+
+  <para id="image_reconstruction"> <title> Image Reconstruction with Fourier Transforms </title>
+The signal acquired from the electromagnetic emission of atoms contains information about the magnitude of each volume element, or voxel. A Fourier transform is performed on the time signals gathered from the emitted electromagnetic radiation to transfer it to the frequency domain [3]. The signal is dismantled and organized in the frequency domain. The frequency is related to its position based on how the magnetic field and radio frequency pulses were applied. An inverse Fourier transform transforms the signals from the frequency domain to 3D space, creating the actual fMRI image [3]. In this space, each unit of resolution is a 3D voxel and the magnitude of each voxel corresponds to the amplitude of the response at that region.
+  </para>
+
+ <para id="Brain_Mapping"> <title>Brain mapping</title>
+A map of brain activity can be formed by taking MRI scans over time (i.e. fMRI). Blood oxygen levels are the quantities of interest in an fMRI scan. Blood with higher oxygen concentration has a different frequency response than blood with lower oxygen levels [2]. Active regions of the brain will quickly receive oxygen-rich blood. This spike in blood flow is called the hemodynamic response, a plot of which is shown in <link target-id="hrf"/>. An fMRI scan can determine where these active regions are over time and thus map the active regions of the brain for particular tasks. This type of imaging is called blood-oxygen-level dependent (BOLD) contrast imaging [2]. The result of an fMRI scan is a 4D matrix containing the intensity of each voxel. The first three dimensions correspond to space and the fourth is the time dimensions. In essence, this provides pictures of the brain over time; higher values in a location indicate that that region of the brain is active. 
+ </para>
+
+<figure id="hrf">
+   <media id="hemo" alt="">
+      <image mime-type="image/png" src="../../media/hdr.png" width="400"/>
+   </media>
+   <caption> The hemodynamic response function (HRF). </caption>
+</figure>
+
+</content>
+
+</document>

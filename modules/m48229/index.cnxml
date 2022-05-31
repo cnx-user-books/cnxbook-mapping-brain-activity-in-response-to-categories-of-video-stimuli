@@ -1,0 +1,67 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+
+<title>Results</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m48229</md:content-id>
+  <md:title>Results</md:title>
+  <md:abstract/>
+  <md:uuid>d4ca5639-bc32-4570-bd53-2e898feea8b8</md:uuid>
+</metadata>
+
+<content>
+  <para id="discussion"> <title> Discussion </title>
+Images collected from the preprocessed fMRI were combined into a 64x64x18x5783 matrix, where each point represents an (x,y,z,t) value for the BOLD response. Each voxel can therefore be represented by an (x,y,z) component and analyzed across the time domain to determine the response to each video type. To do so, the matrix was split up into different, smaller matrices of size 64x64x18x(duration) by the video and the video type. The first 15 videos of each type were analyzed.
+  </para>
+
+  <para id="discussion1">
+For each video, each of the 73728 voxels was fit to the convolution of the unit step and the hemodynamic response function over the duration of the video using a generalized linear model (GLM). This produced fit parameters β for each voxel for each video which were then averaged according to video type and plotted for multiple cross sections. These cross sections were then weaved together into videos as shown below in <link target-id="fMRI_gifs"/>. Recall that only a section of the brain was imaged in this case to improve spatial and temporal resolution
+  </para>
+
+<figure id="fMRI_gifs" orient="vertical"><subfigure id="action">
+      <title>Action Videos</title>
+      <media id="actionGif" alt="">          
+         <image mime-type="image/gif" src="../../media/betaAction.gif" width="400"/>
+      </media>
+   </subfigure>
+   <subfigure id="animal">
+      <title>Animal Videos</title>
+      <media id="animalGif" alt="">
+         <image mime-type="image/gif" src="../../media/betaAnimal.gif" width="400"/>
+      </media>
+   </subfigure>
+   <subfigure id="building">
+      <title>Building Videos</title>
+      <media id="buildingGif" alt="">
+         <image mime-type="image/gif" src="../../media/betaBuilding.gif" width="400"/>
+      </media>
+   </subfigure>
+   <subfigure id="landscape">
+      <title>Landscape Videos</title>
+      <media id="landscapeGif" alt="">
+         <image mime-type="image/gif" src="../../media/betaLandscape.gif" width="400"/>
+      </media>
+   </subfigure>
+   <subfigure id="object">
+      <title>Object Videos</title>
+      <media id="objectGif" alt="">
+         <image mime-type="image/gif" src="../../media/betaObject.gif" width="400"/>
+      </media>
+   </subfigure>
+   <subfigure id="people">
+      <title>People Videos</title>
+      <media id="peopleGif" alt="">
+         <image mime-type="image/gif" src="../../media/betaPeople.gif" width="400"/>
+      </media>
+   </subfigure>
+   
+<caption>From top to bottom, these images show the activity of the brain in (a) action, (b) animal, (c) building, (d) landscape, (e) object, and (f) people videos. Positive correlations are shown in red, while negative correlations are shown in blue. Videos were formed by moving from the relative front of the brain to the back. Recall that only the rear portion of the brain is shown.</caption></figure><para id="discussion3">From inspection, we can see that there are areas of heightened stimulation that differ across video types. In order to confirm this analytically, we calculated an ANOVA table for the means of the 6 different videos and determined that the stimulation in response to the different types is significantly different (<m:math>
+<m:apply><m:lt/><m:ci>p</m:ci><m:cn>0.001</m:cn></m:apply>
+</m:math>). 
+  </para><para id="discussion4">
+As validation of our analysis, we noticed in every video a relatively high level (red) of stimulation of the parietal and occipital lobes, which are areas of visual processing within the brain. We expect this to occur, since the visual stimulation should activate the areas of the brain responsible for image processing and analysis within the brain.
+  </para>
+
+  <para id="discussion5">Some interesting characteristics that we noted from visual inspection was a heightened stimulation in every section of the action videos when compared to the other videos, which could indicate the high level of integration of all of the other types of videos and the level of processing that must occur to capture the details within these videos. Large zones of little to no stimulation are also exhibited in the building, landscape and animal videos, which may indicate decreased interest during these videos. However, note that most of this analysis is qualitative in nature, and may not accurately reflect future analysis of the correlations. 
+  </para></content>
+
+</document>

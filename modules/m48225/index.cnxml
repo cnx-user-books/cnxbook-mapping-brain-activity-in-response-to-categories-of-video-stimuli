@@ -1,0 +1,61 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+
+<title>Approach</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m48225</md:content-id>
+  <md:title>Approach</md:title>
+  <md:abstract/>
+  <md:uuid>d3560586-983c-4c87-9848-09f5e0ef937e</md:uuid>
+</metadata>
+
+<content>
+  <para id="intro_para">
+To conclude whether a region of the brain had been activated by a video, regression analysis was performed on the fMRI data to determine which regions of the brains were involved in eliciting a certain response pattern. If a movie clip activates a region of the brain, that voxel value should switch from a low to a high value, essentially turning “on”.  Fitting parameters from a regression indicate whether this “on” response occurred for any voxel for any movie.
+  </para>
+
+  <para id="experimental"> <title> Experimental Setup </title>
+While in an MRI scanner, a subject watched 6 types of videos on average 10 seconds long. The types were assigned based on what the main subject matter of the video was and were as follows: object, animal, people, action, landscape, and building. The back portion of the brain was scanned every second. This region contains the visual cortex, which is stimulated when watching video. The region of the scan is the blue region displayed in <link target-id="Brain3D"/>. A coronal slice of this region is displayed in <link target-id="BrainSlice"/>.
+  </para>
+
+<figure id="Brain3D"><media id="br3d" alt="">
+      <image mime-type="image/jpg" src="../../media/brain3D.jpg" width="400"/>
+   </media>
+   
+<caption>3D image of the subject's brain. Scanned region in blue. </caption></figure><figure id="BrainSlice">
+   <media id="bs" alt="">
+      <image mime-type="image/jpg" src="../../media/BrainSlice.jpg" width="400"/>
+   </media>
+   <caption> Blue slice shows coronal view of the brain. </caption>
+</figure>
+
+  <para id="GLM"><title>Generalized Linear Model </title>The GLM is a means to identify significant parameters that affect an experimental response. Parameters are made to fit the measured data through multiplication with beta values. The formulation is as follows:
+  </para><para id="mth">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<apply><eq/><ci>y</ci><ci>Xβ</ci></apply>
+</math>
+  </para>
+
+  <para id="GLM1">
+In this formulation Y represents some measured quantity over time, X is the predictor of what that value will be and β is a fitting parameter chosen to minimize the error between X and Y. In general, X can have several columns representing different predictors of the output and each predictor would then have a corresponding β value. In this analysis only one predictor is implemented. The β value signifies the weight that a certain predictor has in producing the output Y. 
+  </para>
+
+  <para id="GLM2">
+This approach can be applied to fMRI data to determine what regions “turn on” in response to a particular type of movie. The response of a given voxel during a certain movie is the measured response, Y. The predictor is the expected response of a voxel that has just been activated by a new video clip. In the simplest case, this would be modeled by a unit step – a strictly on/off response. The β values are parameters that indicate whether or not a certain voxel exhibits this “on” response. A high β value for a given voxel shows that that voxel has been activated for that movie clip. 
+  </para>
+
+  <para id="conv"> <title> Convolution </title>
+The actual value of a voxel over time correlates to the blood flow in that region of the brain. Blood flow cannot start and stop instantaneously, as modeled by the unit step. The actual blood response to activation in the brain is best modeled by the hemodynamic response function (HRF). Convolution is a mathematical operation that can be used to find the output of a system given an input and the impulse response function of the system. Treating the HRF as the impulse response function to the system and the unit step as the input to the system, the output can be calculated through convolution <link target-id="BrainSlice"/>. Convolving these two signals results in a more biologically accurate predictor for the measured fMRI data. The expected response from the convolution, shown below in <link target-id="convolution"/>, is inserted as the predictor in the GLM instead of the unit step in order to arrive at more accurate β values.
+  </para>
+
+  <para id="conv1">β values were calculated for each voxel for 15 movies of each type. The higher the beta value for a voxel, the more weight that voxel has in creating the expected response. Arranging the β values in 3 dimensions yields a map of the active regions of the brain during a movie clip. 
+  </para><figure id="convolution"><media id="c" alt="">
+      <image mime-type="image/png" src="../../media/conv.png" width="800"/>
+   </media>
+   
+<caption>The convolution of the HRF and unit step to yield a better predictor, X, for the GLM. </caption></figure><para id="alg"> <title> The Algorithm </title>
+Three computational steps accomplished the goal of creating maps of active regions of the brain for each type of movie. First the HRF was convolved with a normalized unit step function. The result was truncated to match the duration of each of the video clips. Next, β values were calculated for each voxel for 19 movies of each type. For one movie clip each voxel received one β value, indicating its activation during that clip. β values were averaged for each of the six movie types. Finally, these vectors of β values were rearranged into 3D space to create a map of brain activation. The full process produces 6 brain activity maps corresponding to 6 types of video clips.  
+  </para>
+
+</content>
+
+</document>

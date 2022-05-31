@@ -1,0 +1,24 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+
+<title>Introduction</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m48226</md:content-id>
+  <md:title>Introduction</md:title>
+  <md:abstract/>
+  <md:uuid>fc08b6fb-902f-4cb9-886a-63950664db7a</md:uuid>
+</metadata>
+
+<content>
+  <para id="para1"><title>Introduction to fMRI</title>
+Functional magnetic resonance imaging (fMRI) is an imaging technique that can be used to view various parts of the brain in real time. Physicians use fMRI in clinical settings as a non-invasive, radiation-free technique to image normal or abnormal brain activity. It has also been used to provide valuable insight to psychologists and neuroscientists, who wish to study neuronal functions as a patient or participant performs various activities.
+  </para>
+
+  <para id="para2">
+In order to measure neural activity in the brain, fMRI measures changes in blood flow through a technique known as Blood-oxygen-level dependent (BOLD) contrast. Because the brain does not store glucose, whenever neurons in a particular area activate, glucose must be delivered at a greater rate to the site to supply sufficient energy for this stimulation. In order to do so, blood flow in this region of the brain increases. BOLD contrast measures this change in blood flow and allows us to map neuronal activity indirectly by understanding the associated changes in flow rates. However, the changes in blood flow lag the increase in neuronal activity and must be adjusted for when considering brain activity in real time.
+  </para>
+
+  <para id="problem_statement"> <title>Problem Statement</title>
+In this experiment, we aim to use fMRI to determine how localization of activity in the brain changes as our mentor Ricky Savjani watches different types of videos, which have been separated into 6 functional categories: action, animals, buildings, landscapes, objects, and people. Through analysis of the BOLD-contrast imaging, we seek to find local areas of stimulation of distinct portions of the brain that may result from watching these different types of videos.
+</para></content>
+
+</document>

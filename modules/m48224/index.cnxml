@@ -1,0 +1,30 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+
+<title>The Team</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m48224</md:content-id>
+  <md:title>The Team</md:title>
+  <md:abstract/>
+  <md:uuid>a9d30704-b4fd-4a78-b313-2ece19eebdf1</md:uuid>
+</metadata>
+
+<content>
+  <para id="fs-id1164510297274"> <title>Ben Adler: Bioengineering and Biochemistry</title>
+Ben researched the background of fMRI function and the method of brain mapping via convolution. 
+  </para>
+
+  <para id="fs-id1164509164199"> <title>Caitlin Makatura: Bioengineering</title>
+Caitlin researched the GLM model and convolution method, implemented the code for these sections, and wrote the background of the project. 
+  </para>
+
+  <para id="fs-id1164511097427"> <title>Navin Pathak: Bioengineering</title>
+Navin implemented the code for organizing the data and collecting the results, analyzed the results, and uploaded the report to connexions. 
+  </para>
+
+  <para id="fs-id1164514154644"> <title>Acknowledgements</title>
+We would like to thank Ricky Savjani and Mingbo Cai at the Baylor College of Medicine for providing us with the data for this project as well as guidance on approaching the problem.  
+  </para>
+
+</content>
+
+</document>

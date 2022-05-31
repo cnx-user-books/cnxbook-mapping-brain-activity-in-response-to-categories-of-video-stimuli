@@ -1,0 +1,39 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+
+<title>Conclusions</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m48223</md:content-id>
+  <md:title>Conclusions</md:title>
+  <md:abstract/>
+  <md:uuid>95437ec9-5a79-4586-b0a7-ff53b7ec40d4</md:uuid>
+</metadata>
+
+<content>
+
+  <para id="disc"> <title>Discussion</title>
+Through analysis of fMRI data we are able to distinguish the localized stimulation of different types of videos. By determining the value of the correlation between the convolution of the hemodynamic response function and the unit step function with the BOLD signal at each voxel, we can effectively determine the relative response of each voxel to these videos.
+  </para>
+
+  <para id="chall"> <title>Challenges</title>
+We noticed that our analysis runs into issues with the edges of the brain as shown below in <link target-id="csection"/>. The lines and large flat regions of high/low correlation are uncharacteristic of this type of data and disappears upon moving one voxel into the image. This may result from inaccuracies in the preprocessing techniques at the edges.
+  </para>
+
+<figure id="csection">
+   <media id="cs" alt="">
+      <image mime-type="image/png" src="../../media/crossSection.png" width="400"/>
+   </media>
+   <caption> Note the bands of high and low correlation at the lower right extremity. </caption>
+</figure>
+
+  <para id="chall1">We also ran into issues with processing speed and memory while performing analysis on these datasets. In order to obtain high resolution fMRI data, the dataset was extremely large and consumed large amounts of memory. While we would have liked to process a higher quantity of information with more predictors for our linear model, constraints on time as well as physical computational limitations prevented us from doing so.
+  </para><para id="future"> <title>Future Work</title>
+In the short term, we want to extend the range of fitting functions for the generalized linear model. Currently, we are only using the convolution of the hemodynamic response function and the unit step, but by including more modeling terms, we could improve upon the accuracy of our detection methods.
+  </para>
+
+  <para id="future1">
+In the future, we would like to extend this work into image reconstruction techniques for fMRI. By understanding the types of stimulation from different types of images and videos, we could hope to recreate the image that anyone is viewing at any given time from their fMRI data.
+  </para>
+
+</content>
+
+</document>
